@@ -52,7 +52,8 @@ export default class GlobalStats extends Component {
 
     updateUserRating = () => {
         const currentRating = this.state.currentRating;
-        const nextRating = parseFloat(currentRating * 1 * this.state.ratingProgress * ratingProgressTime / 1000);
+        const addedScore = this.state.ratingProgress * ratingProgressTime / 1000
+        const nextRating = currentRating + addedScore
         this.setState({currentRating: nextRating});
     };
 
